@@ -7,6 +7,7 @@
                     <tr class="text-center">
                         <th scope="col">N°</th>
                         <th scope="col">Noms</th>
+                        <th scope="col">Departement</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -14,7 +15,7 @@
                         <tr class="text-center">
                             <td>{{ $commune->id }}</td>
                             <td>{{ $commune->nom}}</td>
-                            {{-- <td>{{$commune->departement->nom}}</td> --}}
+                            <td>{{$commune->departement->nom}}</td>
                         </tr>
                     @endforeach
                 </tbody>

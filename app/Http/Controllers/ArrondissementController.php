@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Arrondissement;
 use Illuminate\Http\Request;
 
 class ArrondissementController extends Controller
@@ -23,7 +24,9 @@ class ArrondissementController extends Controller
      */
     public function create()
     {
-        return view('arrondissements.listArr');
+        return view('arrondissements.listArr',[
+            'arondissement'=>Arrondissement::all()
+        ]);
     }
 
     /**

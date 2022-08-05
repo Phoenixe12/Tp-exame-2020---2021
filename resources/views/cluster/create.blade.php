@@ -37,8 +37,8 @@
                                         <div class="row row-cols-2">
                                             <div class="col">
                                                 <label for="" class="form-label">Departement</label>
-                                                <select class="form-select form-select-lg mb-3" name="departement"
-                                                    aria-label=".form-select-lg example">
+                                                <select id="departement" class="form-select form-select-lg mb-3"
+                                                    name="departement" aria-label=".form-select-lg example">
                                                     <option selected>Selectionner une departement</option>
                                                     @foreach ($departements as $departement)
                                                         <option value="{{ $departement->id }}">{{ $departement->nom }}
@@ -86,9 +86,8 @@
                                         <div class="row">
                                             <label for="">Nom cluster</label>
                                             <div class="input-group input-group-lg mb-3">
-                                                <input type="text"
-                                                    class="form-control"aria-label="Sizing example input" name="cluster"
-                                                    aria-describedby="inputGroup-sizing-lg"required>
+                                                <input type="text" class="form-control"aria-label="Sizing example input"
+                                                    name="cluster" aria-describedby="inputGroup-sizing-lg"required>
                                             </div>
                                         </div>
 
@@ -116,3 +115,18 @@
     </div>
     {{-- Formulaire fin --}}
 @endsection
+@push('js')
+    <script>
+        $(document).ready(function() {
+            console.log("document loded");
+            // filtre des communes par departements
+            $('#departement').change(function() {
+                var departement_id = $(this).val();
+                console.log(departement_id);
+                $.ajax({
+                    url:
+                });
+            })
+        });
+    </script>
+@endpush

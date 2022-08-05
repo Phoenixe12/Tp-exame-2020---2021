@@ -12,7 +12,7 @@ class Commune extends Model
         'nom',
         'departement_id'
     ];
-    public function commune()
+    public function departement()
     {
         return $this->belongsTo(Departement::class,'departement_id','id');
     }
