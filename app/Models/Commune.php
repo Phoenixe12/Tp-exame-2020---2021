@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Commune extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'nom',
+        'departement_id'
+    ];
+    public function commune()
+    {
+        return $this->belongsTo(Departement::class,'departement_id','id');
+    }
 }

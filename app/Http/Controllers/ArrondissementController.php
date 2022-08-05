@@ -13,7 +13,7 @@ class ArrondissementController extends Controller
      */
     public function index()
     {
-        return view('cluster.listArr');
+        return view('arrondissements.arrondissement');
     }
 
     /**
@@ -23,8 +23,7 @@ class ArrondissementController extends Controller
      */
     public function create()
     {
-        return view('cluster.arrondissement');
-
+        return view('arrondissements.listArr');
     }
 
     /**

@@ -1,6 +1,5 @@
 @extends('Layouts.header')
 @section('departement')
-
     {{-- Formulaire debut --}}
     <div class="container ">
         <section class="section register  d-flex flex-column align-items-center justify-content-center py-4">
@@ -16,16 +15,16 @@
                             <div class="card-body">
 
                                 <div class="container">
-                                    <form action="{{ route('filieres.store') }}" method="post"
+                                    <form action="{{ route('departements.store') }}" method="post"
                                         enctype="multipart/form-data">
                                         @csrf
                                         <div class="row">
                                             <div class="col">
-                                                <label for="">Nom filière</label>
+                                                <label for="">Nom Departement</label>
                                                 <div class="input-group input-group-lg mb-3">
                                                     <input type="text"
-                                                        class="form-control"aria-label="Sizing example input" name="filiere"
-                                                        aria-describedby="inputGroup-sizing-lg"required>
+                                                        class="form-control"aria-label="Sizing example input"
+                                                        name="departement" aria-describedby="inputGroup-sizing-lg"required>
                                                 </div>
                                             </div>
                                         </div>
@@ -52,4 +51,3 @@
     </div>
     {{-- Formulaire fin --}}
 @endsection
-

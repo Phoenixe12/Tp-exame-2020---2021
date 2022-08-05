@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Commune;
+use App\Models\Departement;
 use Illuminate\Http\Request;
 
 class CommuneController extends Controller
@@ -13,7 +15,10 @@ class CommuneController extends Controller
      */
     public function index()
     {
-        return view('cluster.listCom');
+
+        $communes = Commune::all();
+        // dd($communes->first()->departement);
+        return view('cluster.listCom', ['communes' => $communes]);
     }
 
     /**
@@ -24,7 +29,10 @@ class CommuneController extends Controller
     public function create()
     {
 
-        return view('cluster.commune');
+        return view('cluster.commune', [
+            'communes'=>Commune::all(),
+            'departements' => Departement::all(),
+        ]);
 
     }
 
@@ -36,7 +44,13 @@ class CommuneController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Commune::create([
+
+            'nom' => $request->input('commune'),
+            'departement_id' => $request->departement,
+
+        ]);
+        return redirect()->route('communes.index');
     }
 
     /**

@@ -11,8 +11,4 @@ class Filiere extends Model
     protected $fillable = [
         'nom',
     ];
-    public function filiere()
-    {
-        return $this->belongsTo(Filiere::class);
-    }
 }

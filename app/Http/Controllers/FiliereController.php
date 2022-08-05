@@ -26,10 +26,7 @@ class FiliereController extends Controller
      */
     public function create()
     {
-        $filieres = Filiere::pluck('nom', 'id');
-        return view('cluster.filiere',[
-            'filieres'=>$filieres,]
-        );
+        return view('cluster.filiere');
     }
 
     /**
