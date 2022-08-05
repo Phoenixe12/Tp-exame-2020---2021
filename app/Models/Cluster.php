@@ -12,6 +12,7 @@ class Cluster extends Model
         'nom',
         'filiere_id',
         'village_id'
+        
     ];
     public function filiere(){
         return $this->belongsTo(Filiere::class);

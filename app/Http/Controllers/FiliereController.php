@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Filiere;
 use Illuminate\Http\Request;
 
 class FiliereController extends Controller
@@ -13,7 +14,9 @@ class FiliereController extends Controller
      */
     public function index()
     {
-        return view('cluster.filiere');
+        // dd($f->first()->filiere->nom);
+        $filieres = Filiere::all();
+        return view('cluster.listF', ['filieres' => $filieres]);
     }
 
     /**
@@ -23,7 +26,10 @@ class FiliereController extends Controller
      */
     public function create()
     {
-        return view('cluster.listF');
+        $filieres = Filiere::pluck('nom', 'id');
+        return view('cluster.filiere',[
+            'filieres'=>$filieres,]
+        );
     }
 
     /**
@@ -34,7 +40,11 @@ class FiliereController extends Controller
      */
     public function store(Request $request)
     {
-        //
+// dd($request->filiere);
+        Filiere::create([
+            'nom' => $request->filiere
+        ]);
+        return redirect()->route('filieres.index');
     }
 
     /**

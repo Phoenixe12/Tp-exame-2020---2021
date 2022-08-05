@@ -13,7 +13,7 @@ class VillageController extends Controller
      */
     public function index()
     {
-        return view('cluster.village');
+        return view('cluster.listVil');
     }
 
     /**
@@ -23,7 +23,7 @@ class VillageController extends Controller
      */
     public function create()
     {
-        return view('cluster.listVil');
+        return view('cluster.village');
     }
 
     /**

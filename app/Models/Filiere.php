@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Filiere extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'nom',
+    ];
+    public function filiere()
+    {
+        return $this->belongsTo(Filiere::class);
+    }
 }

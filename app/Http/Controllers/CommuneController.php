@@ -13,7 +13,7 @@ class CommuneController extends Controller
      */
     public function index()
     {
-        return view('cluster.commune');
+        return view('cluster.listCom');
     }
 
     /**
@@ -23,7 +23,9 @@ class CommuneController extends Controller
      */
     public function create()
     {
-        return view('cluster.listCom');
+
+        return view('cluster.commune');
+
     }
 
     /**

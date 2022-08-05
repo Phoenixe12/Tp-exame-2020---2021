@@ -71,12 +71,12 @@
                             Afficharges
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="{{route('clusters.index')}}">Cluster</a></li>
-                            <li><a class="dropdown-item" href="{{ route('filieres.index') }}">Filière</a></li>
-                            <li><a class="dropdown-item" href="{{ route('departements.index') }}">Departement</a></li>
-                            <li><a class="dropdown-item" href="{{ route('communes.index') }}">Commune</a></li>
-                            <li><a class="dropdown-item" href="{{ route('arrondissements.index') }}">Arrondissement</a></li>
-                            <li><a class="dropdown-item" href="{{ route('villages.index') }}">Village</a></li>
+                            <li><a class="dropdown-item" href="{{route('clusters.index')}}">Liste Clusters</a></li>
+                            <li><a class="dropdown-item" href="{{ route('filieres.index') }}">Liste Filières</a></li>
+                            <li><a class="dropdown-item" href="{{ route('departements.index') }}">Liste Departements</a></li>
+                            <li><a class="dropdown-item" href="{{ route('communes.index') }}">Liste Communes</a></li>
+                            <li><a class="dropdown-item" href="{{ route('arrondissements.index') }}">Liste Arrondissements</a></li>
+                            <li><a class="dropdown-item" href="{{ route('villages.index') }}">Liste Villages</a></li>
                         </ul>
                     </li>
                 </ul>
