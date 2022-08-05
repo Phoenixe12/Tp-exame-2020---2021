@@ -13,7 +13,7 @@ class DepartementController extends Controller
      */
     public function index()
     {
-        //
+        return view('cluster.departement');
     }
 
     /**
@@ -23,7 +23,7 @@ class DepartementController extends Controller
      */
     public function create()
     {
-        //
+        return view('cluster.listDep');
     }
 
     /**

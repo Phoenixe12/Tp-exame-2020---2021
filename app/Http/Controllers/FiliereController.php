@@ -13,7 +13,7 @@ class FiliereController extends Controller
      */
     public function index()
     {
-        //
+        return view('cluster.filiere');
     }
 
     /**
@@ -23,7 +23,7 @@ class FiliereController extends Controller
      */
     public function create()
     {
-        //
+        return view('cluster.listF');
     }
 
     /**
