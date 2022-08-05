@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Commune;
 use App\Models\Departement;
 use Illuminate\Http\Request;
 
@@ -16,8 +17,6 @@ class DepartementController extends Controller
     {
         $departements = Departement::all();
         return view('cluster.listDep', ['departements' => $departements]);
-
-
     }
 
     /**
@@ -28,8 +27,8 @@ class DepartementController extends Controller
     public function create()
     {
 
-        return view('cluster.departement',[
-            'departements'=>Departement::all(),
+        return view('cluster.departement', [
+            'departements' => Departement::all(),
         ]);
     }
 
@@ -90,5 +89,11 @@ class DepartementController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function commune($id)
+    {
+        $communes = Commune::where('departement_id', $id)->get()->pluck('nom', 'id')->toArray();
+        return response()->json($communes);
+        // dd($communes);
     }
 }

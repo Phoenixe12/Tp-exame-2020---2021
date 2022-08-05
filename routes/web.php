@@ -29,4 +29,5 @@ Route::resource('departements', DepartementController::class);
 Route::resource('communes', CommuneController::class);
 Route::resource('arrondissements', ArrondissementController::class);
 Route::resource('villages', VillageController::class);
+Route::get('get/commune/{id}',[DepartementController::class,"commune"]);
 

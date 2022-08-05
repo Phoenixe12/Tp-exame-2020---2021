@@ -50,7 +50,7 @@
                                             </div>
                                             <div class="col">
                                                 <label for="" class="form-label">Commune</label>
-                                                <select class="form-select form-select-lg mb-3"
+                                                <select id="commune" class="form-select form-select-lg mb-3"
                                                     aria-label=".form-select-lg example" name="commune">
                                                     <option selected>Selectionner une commune</option>
                                                     @foreach ($communes as $commune)
@@ -124,7 +124,22 @@
                 var departement_id = $(this).val();
                 console.log(departement_id);
                 $.ajax({
-                    url:
+                    type: "get",
+                    url: "{{ url('get/commune') }}/" + departement_id,
+                    success: function(data) {
+                        console.log(data);
+                        $('#commune').empty();
+                        $('#commune').append('<option>Selectionner une commune</option>');
+                        if (data) {
+                            $.each(data, function(key, value) {
+                                $('#commune').append(
+                                    $("<option/>",{
+                                        value:key,
+                                        text:value
+                                    }));
+                            })
+                        }
+                    }
                 });
             })
         });
