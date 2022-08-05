@@ -41,28 +41,39 @@
 </head>
 
 <body>
-    {{-- nav bar Debut
-    {{-- <nav class="navbar navbar-expand-lg navbar-light bg-light ">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Exercice 1</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
-                aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarScroll">
-                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                </ul>
-                <form class="d-flex">
-                </form>
-            </div> --}}
-    {{-- </div>
-    </nav> --}}
+    {{-- nav bar Debut--}}
+    <nav class="navbar navbar-expand-lg navbar-light bg-light " style="height: 70px">
+  <div class="container-fluid">
+    <a class="navbar-brand fs-5" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Creations
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle " href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Afficharges
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
     {{-- nav bar fin --}}
     {{-- Formulaire debut --}}
     <div class="container ">
@@ -88,7 +99,7 @@
                                             <div class="col">
                                                 <label for="" class="form-label">Filière</label>
                                                 <select class="form-select form-select-lg mb-3" name="filiere"
-                                                    aria-label=".form-select-lg example ">
+                                                    aria-label=".form-select-lg example " required>
                                                     <option selected>Selectionner une filiere</option>
                                                     @foreach ($filieres as $id => $filiere)
                                                         <option value="{{ $id }}">{{ $filiere }}
@@ -152,13 +163,20 @@
                                             <div class="input-group input-group-lg mb-3">
                                                 <input type="text"
                                                     class="form-control"aria-label="Sizing example input" name="cluster"
-                                                    aria-describedby="inputGroup-sizing-lg">
+                                                    aria-describedby="inputGroup-sizing-lg"required>
                                             </div>
                                         </div>
-                                        <div class="d-grid gap-2 d-md-block">
-                     <button class="btn btn-primary" value="submit"type="submit">Enregistrer</button>
-                     <button class="btn btn-warning" value="reset"type="reset">Annuler</button>
-                 </div>
+
+                                        <div class="row row-cols-auto mt-4">
+                                            <div class="col">
+                                                <input class="btn btn-primary" type="submit"></input>
+                                            </div>
+                                            <div class="col">
+                                                <input class="btn btn-warning" value="Annuler" type="reset"></input>
+                                            </div>
+
+                                        </div>
+
                                     </form>
                                 </div>
 

@@ -1,6 +1,11 @@
 <?php
 
+use App\Http\Controllers\ArrondissementController;
 use App\Http\Controllers\ClusterController;
+use App\Http\Controllers\CommuneController;
+use App\Http\Controllers\DepartementController;
+use App\Http\Controllers\FiliereController;
+use App\Http\Controllers\VillageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,6 +20,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+     return view('welcome');
+ });
+
 Route::resource('clusters',ClusterController::class);
+Route::resource('filieres', FiliereController::class);
+Route::resource('departements', DepartementController::class);
+Route::resource('communes', CommuneController::class);
+Route::resource('arrondissements', ArrondissementController::class);
+Route::resource('villages', VillageController::class);
+
